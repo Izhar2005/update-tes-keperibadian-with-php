@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Temukan Kepribadian Aslimu!</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <button id="darkModeToggle" aria-label="Toggle Dark Mode" title="Mode Gelap/Terang">🌙</button>
+
+    <main>
+        <!-- Landing Page -->
+        <section id="landing" class="page active">
+            <h1>Temukan Kepribadian Aslimu!</h1>
+            <p class="description">
+                Apakah kamu seorang Introvert, Ekstrovert, atau Ambivert? Temukan jawabannya melalui tes kepribadian ini!
+            </p>
+            <div class="personality-types">
+                <div class="type introvert">
+                    <h2>Introvert</h2>
+                    <p>Orang yang lebih suka menyendiri dan mendapatkan energi dari waktu sendiri.</p>
+                </div>
+                <div class="type extrovert">
+                    <h2>Ekstrovert</h2>
+                    <p>Orang yang energik dan mendapatkan energi dari interaksi sosial.</p>
+                </div>
+                <div class="type ambivert">
+                    <h2>Ambivert</h2>
+                    <p>Gabungan antara introvert dan ekstrovert, fleksibel dalam berbagai situasi.</p>
+                </div>
+            </div>
+
+            <form id="userInfoForm" class="user-info-form">
+                <label for="userName">Nama:</label>
+                <input type="text" id="userName" name="userName" placeholder="Masukkan nama" required />
+
+                <label for="userAge">Usia:</label>
+                <input type="number" id="userAge" name="userAge" placeholder="Masukkan usia" min="1" max="120" required />
+
+                <fieldset>
+                    <legend>Jenis Kelamin:</legend>
+                    <label><input type="radio" name="userGender" value="Laki-laki" required /> Laki-laki</label>
+                    <label><input type="radio" name="userGender" value="Perempuan" required /> Perempuan</label>
+                    <label><input type="radio" name="userGender" value="Lainnya" required /> Lainnya</label>
+                </fieldset>
+            </form>
+
+            <button id="startTestBtn" class="btn-primary">Mulai Tes</button>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="page">
+            <div id="progressContainer">
+                <div id="progressBar"></div>
+            </div>
+            <div id="questionContainer" class="fade-in">
+                <h2 id="questionText"></h2>
+                <div id="answers"></div>
+            </div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result" class="page">
+            <h2>Hasil Tes Kepribadianmu</h2>
+            <div id="resultType" class="result-type"></div>
+            <div id="resultDescription" class="result-description"></div>
+            <div id="resultPercentages" class="result-percentages"></div>
+            <div id="resultIcon" class="result-icon"></div>
+            <div class="result-buttons">
+                <button id="retryBtn" class="btn-secondary">Ulangi Tes</button>
+                <button id="shareBtn" class="btn-secondary">Bagikan Hasil</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
